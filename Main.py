@@ -6,11 +6,6 @@ st.title("YouTube Video Downloader")
 
 st.text("you can download youtube thumbnails too")
 
-
-
-
-
-
 thumbnail_url = st.text_input("Enter Youtube thumbnail url")
 
 
@@ -27,12 +22,14 @@ def download_thumbnail(url):
         return f"Error: {str(e)}"
 
 
-
 if st.button("Download Thumbnail"):
     if thumbnail_url:
+        
         t = download_thumbnail(thumbnail_url)
-        st.image(t,caption="Youtube Thumbnail")
+        
+        st.image(t,caption="Youtube Thumbnail")     
     else:
+        
         st.text("Please enter a valid URL")
 
 
@@ -51,13 +48,17 @@ def download_video(url):
         
         
         return f"Video downloaded successfully! Check the 'downloads' folder."
+        
     except Exception as e:
+        
         return f"Error: {str(e)}"
 
 
 if st.button("Download"):
+    
     if video_url:
         st.text(download_video(video_url))
+        
     else:
         st.text("Please enter a valid YouTube video URL.")
 
